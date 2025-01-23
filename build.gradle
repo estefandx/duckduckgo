@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.duckduckgo'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.27.0'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.10.2'
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.5.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+
+
+
+}
+
+test {
+    useTestNG(){
+        suites 'src/test/resources/testng.xml'
+    }
+
+}
